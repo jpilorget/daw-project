@@ -6,9 +6,14 @@
  * Brief: Main frontend file (where the logic is)
 =============================================================================*/
 
-class Main {
+class Main implements EventListenerObject {
+
+    myf:MyFramework;
+    counter:number = 0;
+
+
     main():void {
-        console.log("estoy en main()");
+        console.log("estoy en main()");    
 
         let usuarios:Array<User>;
         usuarios = new Array<User>();
@@ -16,63 +21,45 @@ class Main {
         usuarios.push(new User(24, "Pedro", "pedro@email.com"))
         usuarios.push(new User(39, "Maria", "maria@email.com"))
 
-        for (let i in usuarios) 
+        this.mostrarUsers(usuarios);
+
+        this.myf = new MyFramework ();
+
+        let b:HTMLElement = document.getElementById('boton');
+        b.addEventListener('click',this);
+
+
+        myf.configClick('boton', ()=> (this.evento));
+
+    }
+
+    mostrarUsers(users:Array<User>):void {
+
+        // for (let i in users) 
+        // {
+        //     users[i].printInfo ();
+        // }
+
+        for (let o of users) 
         {
-            usuarios[i].printInfo ();
+            o.printInfo ();
         }
-
     }
 
-}
-
-
-class User {
-    private _id:number;
-    private _name:string;
-    private _email:string;
-    private _isLogged:boolean;
-
-    constructor (id:number, name:string, email:string) {
-        this._id = id;
-        this._name = name;
-        this._email = email;
-    }
-
-    set id(id:number)
+    handleEvent(evt:Event):void
     {
-        this._id = id;
+        console.log('Se hizo click!');
+        console.log(this);
 
-    }
+        this.counter ++;
 
-    get id():number {
-        return this._id
-    }
+        let b:HTMLElement = this.myf.getElementByEvent (evt);
 
-    set name(name:string)
-    {
-        this._name = name;
+        console.log(b)
 
-    }
-
-    get name():string {
-        return this._name
-    }
-
-    set email(email:string)
-    {
-        this._email = email;
-
-    }
-
-    get email():string {
-        return this._email
-    }
-
-    printInfo():void {
-        console.log("id = " + this._id +  ", name = " + this._name + ", email = " + this._email)
+        b.textContent = `Click ${this.counter}`;
     }
 }
-
 
 window.onload = function () {
     let m:Main = new Main();
