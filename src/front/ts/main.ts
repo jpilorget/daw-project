@@ -6,7 +6,7 @@
  * Brief: Main frontend file (where the logic is)
 =============================================================================*/
 
-class Main implements EventListenerObject {
+class Main implements EventListenerObject, GETResponseListener {
 
     myf:MyFramework;
     counter:number = 0;
@@ -25,11 +25,15 @@ class Main implements EventListenerObject {
 
         this.myf = new MyFramework ();
 
-        let b:HTMLElement = document.getElementById('boton');
-        b.addEventListener('click',this);
+        // let b:HTMLElement = document.getElementById('boton');
+        // b.addEventListener('click',this);
+
+        this.myf.configEventListener('click', 'boton', this);
+
+        this.myf.requestGET('Devices.txt', this);
 
 
-        myf.configClick('boton', ()=> (this.evento));
+        // myf.configClick('boton', ()=> (this.evento));
 
     }
 
@@ -59,6 +63,11 @@ class Main implements EventListenerObject {
 
         b.textContent = `Click ${this.counter}`;
     }
+
+    handleGETResponse(status: number, response: string): void {
+        console.log("Respuesta del servidor: " + response)
+    }
+
 }
 
 window.onload = function () {
