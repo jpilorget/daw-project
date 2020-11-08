@@ -1,20 +1,40 @@
 ![header](doc/header.png)
 
-# DAW Project Template
+# Desarrollo de Aplicaciones Web
+## Carrera de Especialización en Internet de las Cosas (CEIoT)
 
-Authors:
+### Introducción
 
-* Agustin Bassi
-* Brian Ducca
-* Santiago Germino
+A la hora de desplegar arquitecturas de [IoT](https://es.wikipedia.org/wiki/Internet_de_las_cosas) (Internet de las Cosas) es fudamental tener la capacidad de visualizar el estado de las "cosas" interconectadas. Este proyecto permite desplegar una aplicación web para la gestión y visualización de dispositivos. 
 
-Template project for Web Applications Development.
+Este proyecto forma parte del trabajo final de la materia Desarrollo de Aplicaciones Web de la CEIoT a cargo de Agustín Bassi, Brian Ducca y Santiago Germino. Para más información acerca del proyecto hacer [clic aquí](https://github.com/ce-iot/daw-project-template/wiki).
 
-To read all project documentation, please go to its wiki in [this link](https://github.com/ce-iot/daw-project-template/wiki).
+### Arquitectura
+En el siguiente diagrama se puede observar la arquitectura de aplicación: 
 
-## Licence
+<img src="doc/architecture.png" width="640">
 
-This project is published under GPLV3+ licence.
+### Pre-requisitos
+
+Para poder ejecutar el proyecto de manera correcta es necesario tener instalado:
+- Docker ([ver aquí](https://docs.docker.com/get-docker/)).
+- Docker Compose ([ver aquí](https://docs.docker.com/compose/install/))
+
+### Instrucciones
+
+
+### Próximos pasos:
+Como desarrollos a futuro, se pretende incorporar:
+
+- Incorporación de nuevos dispositivos.
+- Eliminación de dispositivos.
+
+### Autor:
+Juan Pablo Pilorget
+
+## Licencia
+
+Este proyecto se encuentra publicado bajo licencia GPLV3+. Ver archivo LICENCE para más información.
 
 ![footer](doc/footer.png)
 
