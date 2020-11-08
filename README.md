@@ -39,7 +39,7 @@ Juan Pablo Pilorget
 
 ### Licencia
 
-Este proyecto se encuentra publicado bajo licencia GPLV3+. Ver archivo LICENCE para más información.
+Este proyecto se encuentra publicado bajo licencia GPLV3+. Ver archivo LICENSE para más información.
 
 ![footer](doc/footer.png)
 
