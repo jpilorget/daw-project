@@ -78,7 +78,7 @@ class Main implements EventListenerObject, GETResponseListener, POSTResponseList
         {
             let state:boolean = this.view.getSwitchStateById(b.id);
             let data = {"id": `${b.id}`, "state":state};
-            this.myf.requestPOST ("Devices.php", data, this);
+            this.myf.requestPOST ("https://cors-anywhere.herokuapp.com/https://postman-echo.com/post", data, this);
         }
 
 
