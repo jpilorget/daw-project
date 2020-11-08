@@ -22,17 +22,22 @@ Para poder ejecutar el proyecto de manera correcta es necesario tener instalado:
 
 ### Instrucciones
 
+Para desplegar los servicios de la arquitectura detallada previamente deberá:
+1) Ejecutar el comando `docker-compose up`.
+2) Ir al navegador y acceder a la interfaz web en la dirección `http://localhost:8000`.
 
-### Próximos pasos:
+En caso de que, al ejecutar por primera vez el comando `docker-compose up` el servidor de NodeJS no se pueda conectar a la base de datos, ejecutar el archivo `recycle-container.sh`. Dicho archivo elimina y vuelve a crear los servicios desplegados con el comando del paso 1.  
+
+### Próximos pasos
 Como desarrollos a futuro, se pretende incorporar:
 
 - Incorporación de nuevos dispositivos.
 - Eliminación de dispositivos.
 
-### Autor:
+### Autor
 Juan Pablo Pilorget
 
-## Licencia
+### Licencia
 
 Este proyecto se encuentra publicado bajo licencia GPLV3+. Ver archivo LICENCE para más información.
 

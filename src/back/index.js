@@ -32,18 +32,9 @@ app.get('/dispositivos', function(req, res, next) {
         }
         res.send(respuesta)
     })
-    // response = "{ 'key1':'value1' }"
-    //res.send(JSON.stringify(response)).status(200);
-    //res.status(400).send(JSON.stringify(response)).status(200);
-    //res.json(datos)
 });
 
-//dispositivos/i(con i = numero de dispositivo)
 app.get('/dispositivos/:id', function(req, res, next) {
-    //Funciones de java script => map reduce filter 
-    //let datosFiltrados = datos.filter(itemDeLaLista=>{
-      //  return itemDeLaLista.id ==req.params.id;
-      //otra manera for (let in datos)
       conexionMysql.query('Select * from Devices where id=?',[req.params.id],function(err,respuesta){
         if(err){
             res.send(err).status(400);
@@ -53,9 +44,6 @@ app.get('/dispositivos/:id', function(req, res, next) {
     })
  });
  
- //Ejercicio 6
- //Espero recibir algo del estilo (body) {id:1, state:1}
- //devuelvo el dato modificado
  app.post('/dispositivos', function(req, res){
      console.log(req.body)
     conexionMysql.query('Insert into Devices(name, state, type) VALUES(?, ?, ?)',[req.body.name,req.body.state, req.body.type],function(err,respuesta){
