@@ -3,28 +3,28 @@
         "id":"1",
         "name": "Lampara 1",
         "description":"Luz living",
-        "state":"0",
+        "state":0,
         "type":"0"
     },
         {
         "id":"2",
         "name": "Cortina 1",
         "description":"Cortina living",
-        "state":"1",
+        "state":100,
         "type":"1"
     },
         {
         "id":"3",
         "name": "Lampara 2",
         "description":"Luz dormitorio",
-        "state":"0",
+        "state":25,
         "type":"0"
     },
         {
         "id":"4",
         "name": "Cortina 2",
         "description":"Cortina dormitorio",
-        "state":"1",
+        "state":75,
         "type":"1"
     }
 ]

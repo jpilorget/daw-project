@@ -20,10 +20,10 @@ class ViewMainPage
                 image = "window.png"
             }
 
-            let checked = "";
+            let checked = 0;
             if (dev.state == "1")
             {
-                checked = "checked"
+                checked = 15
             }
 
             e.innerHTML += `<li class ="collection-item avatar">
@@ -31,14 +31,13 @@ class ViewMainPage
                 <span class="title">${dev.name}</span>
                 <p>${dev.description}<br>
                 </p>
-                <a href="#!" class="secondary-content"><div class="switch">
-                    <label>
-                    Off
-                    <input id = "dev_${dev.id}" type="checkbox" ${checked}>
-                    <span class="lever"></span>
-                    On
-                    </label>
+                <a class="secondary-content">
+                <form action="#">
+                <div class="range-field">
+                    <input id = "dev_${dev.id}" type="range" value=${dev.state} min = "0" max = "100" 
+                    onchange = ${checked}>
                 </div>
+                </form>
                 </a>
                 </li>`;
         }
